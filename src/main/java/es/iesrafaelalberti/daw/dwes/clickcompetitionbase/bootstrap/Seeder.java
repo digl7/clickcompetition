@@ -46,26 +46,22 @@ public class Seeder implements CommandLineRunner {
         Location fuzhou = locationRepository.save(new Location("Fuzhou",fujian));
         Location putian = locationRepository.save(new Location("Putian",fujian));
 
-        Team chiano = teamRepository.save(new Team("Chinos e Italianos"));
-        Team decadi = teamRepository.save(new Team("Los de cádiz"));
-        Team itali = teamRepository.save(new Team("Italianos"));
-        Team xino = teamRepository.save(new Team("Chinos"));
 
-        Player espanolo = playerRepository.save(new Player("españolito1", 0, cadiz));
+        Player espanolo = playerRepository.save(new Player("españolito1", 33, cadiz));
+        Player fachita = playerRepository.save(new Player("facha", 10, cordoba));
+        Player pode = playerRepository.save(new Player("podemitas", 22, cordoba));
+        Player vox = playerRepository.save(new Player("votante", 7, cadiz));
+        Player itali1 = playerRepository.save(new Player("maccarrani", 2,manarola));
+        Player itali2 = playerRepository.save(new Player("spagetti", 2, portofino));
 
-        Player fachita = playerRepository.save(new Player("facha", 10, malaga));
-        Team prueba = teamRepository.save(new Team("prueba"));
-        prueba.addPlayers(Arrays.asList(espanolo,fachita));
+        Player xin = playerRepository.save(new Player("corona", 13,fuzhou));
+        Player zao = playerRepository.save(new Player("virus", 2, putian));
 
-        playerRepository.save(new Player("podemitas", 22, cordoba));
-        playerRepository.save(new Player("votante", 7, cadiz));
-        playerRepository.save(new Player("maccarrani", 13,manarola));
-        playerRepository.save(new Player("spagetti", 2, portofino));
-
-        playerRepository.save(new Player("corona", 13,fuzhou));
-        playerRepository.save(new Player("virus", 2, putian));
-
-
+        Team chiano = teamRepository.save(new Team("Chinos e Italianos").addPlayers(Arrays.asList(itali1,itali2,xin,zao)));
+        Team decadi = teamRepository.save(new Team("Los de cádiz").addPlayers(Arrays.asList(vox,espanolo)));
+        Team itali = teamRepository.save(new Team("Italianos").addPlayers(Arrays.asList(itali1,itali2)));
+        Team xino = teamRepository.save(new Team("Chinos").addPlayers(Arrays.asList(xin,zao)));
+        Team dorcoba = teamRepository.save(new Team("cordobeze").addPlayers(Arrays.asList(fachita,pode)));
 
 
 

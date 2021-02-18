@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 
 public interface CountryRepository extends CrudRepository<Country, Long> {
-    Collection<Country> findPlayerByClicks(Integer clicks);
+    //Collection<Country> findPlayerByClicks(Integer clicks);
 }

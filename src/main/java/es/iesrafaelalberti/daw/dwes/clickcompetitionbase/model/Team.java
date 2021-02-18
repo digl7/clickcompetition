@@ -18,8 +18,7 @@ public class Team {
     private int clicks;
 
 
-    @JsonBackReference
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany
     @JoinTable(
             name = "player_team",
             joinColumns = { @JoinColumn(name = "team_id") },
@@ -41,7 +40,11 @@ public class Team {
         return this;
     }
 
-    public void addClicks(int clicks) {
-        this.clicks += clicks;
+    public void updateClicks() {
+        clicks=0;
+        for (Player player:this.players
+             ) {
+            clicks+=player.getClicks();
+        }
     }
 }

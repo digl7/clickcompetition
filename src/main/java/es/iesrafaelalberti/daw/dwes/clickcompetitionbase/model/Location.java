@@ -44,5 +44,6 @@ public class Location {
 
     public void addClicks(int clicks) {
         this.clicks += clicks;
+
     }
 }
