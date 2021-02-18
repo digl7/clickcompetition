@@ -26,9 +26,9 @@ public class LocationController {
                 HttpStatus.OK);
     }
 
-    @GetMapping(value="/location/bests")
+    /*@GetMapping(value="/location/bests")
     public ResponseEntity<Object> locationResults(){
         return new ResponseEntity<>(locationRepository.bestLocation(), HttpStatus.OK);
-    }
+    }*/
 
 }

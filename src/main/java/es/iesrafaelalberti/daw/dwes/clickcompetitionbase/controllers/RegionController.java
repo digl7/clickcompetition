@@ -26,4 +26,10 @@ public class RegionController {
                 HttpStatus.OK);
     }
 
+    @GetMapping(value ="/region/bests")
+    public ResponseEntity<Object> regionBests() {
+        return new ResponseEntity<>(regionRepository.regionBests(),HttpStatus.OK);
+
+    }
+
 }
