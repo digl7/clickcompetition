@@ -35,15 +35,10 @@ public class Region {
         this.name = name;
         this.country = country;
     }
-
-    public Region(String name, int clicks) {
-        this.name = name;
-        this.clicks = clicks;
-    }
-
-
-    public void addClicks(int clicks, Country country) {
-        this.clicks += clicks;
-        this.country = country;
+    public Region(Region oldRegion, Long clicks){
+        this.name= oldRegion.getName();
+        this.id = oldRegion.getId();
+        this.country = oldRegion.getCountry();
+        this.clicks = clicks.intValue();
     }
 }

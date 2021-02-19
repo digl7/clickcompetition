@@ -6,7 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 
 public interface LocationRepository extends CrudRepository<Location, Long> {
-    @Query("Select l.name, sum(p.clicks) from Location l, Player p " +
+    @Query("Select new es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Location(l, sum(p.clicks)) " +
+            "from Location l, Player p " +
             "where l.name=p.location.name " +
             "group by l.name " +
             "order by sum(p.clicks) desc")

@@ -34,7 +34,7 @@ public class Seeder implements CommandLineRunner {
 
         Region andalucia = regionRepository.save(new Region("Andalucía", espana));
         Region boltano = regionRepository.save(new Region("Boltano", italia));
-        Region fujian = regionRepository.save(new Region("fujian", china));
+        Region fujian = regionRepository.save(new Region("Fujian", china));
 
         Location cadiz = locationRepository.save(new Location("Cádiz",andalucia));
         Location cordoba = locationRepository.save(new Location("Córdoba",andalucia));

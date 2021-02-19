@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 
 public interface TeamRepository extends CrudRepository<Team, Long> {
-    @Query("Select tl from Player.teams tl, Team t, Player p Where p.name = t.name")
-        Collection<Object> showTeams();
+    //@Query("Select tl from Player.teams tl, Team t, Player p Where p.name = t.name")
+        //Collection<Object> showTeams();
 }

@@ -7,7 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 
 public interface RegionRepository extends CrudRepository<Region, Long> {
-    @Query("Select r.name, sum(p.clicks) from Region r, Location l, Player p " +
+    @Query("Select new es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Region(r, sum(p.clicks)) " +
+            "from Region r, Location l, Player p " +
             "where l.name = p.location.name and r.name = l.region.name " +
             "group by r.name order by sum(p.clicks) desc ")
         Collection<Object> regionBests();

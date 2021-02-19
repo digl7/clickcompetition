@@ -36,7 +36,10 @@ public class Country {
         this.clicks = clicks;
     }
 
-    public void addClicks(int clicks) {
-        this.clicks += clicks;
+    public Country(Country oldCountry, Long clicks){
+        this.name= oldCountry.getName();
+        this.id = oldCountry.getId();
+        this.clicks = clicks.intValue();
     }
+
 }

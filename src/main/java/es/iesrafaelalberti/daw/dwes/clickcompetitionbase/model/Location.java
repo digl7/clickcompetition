@@ -15,6 +15,8 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private int clicks;
+
 
     //Relacion M-1
     @ManyToOne
@@ -33,6 +35,13 @@ public class Location {
     public Location(String name, Region region) {
         this.name = name;
         this.region = region;
+    }
+
+    public Location(Location oldLocation, Long clicks){
+        this.name= oldLocation.getName();
+        this.id = oldLocation.getId();
+        this.region = oldLocation.getRegion();
+        this.clicks = clicks.intValue();
     }
 
 }
