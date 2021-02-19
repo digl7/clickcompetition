@@ -37,8 +37,7 @@ public class Seeder implements CommandLineRunner {
         Region fujian = regionRepository.save(new Region("fujian", china));
 
         Location cadiz = locationRepository.save(new Location("Cádiz",andalucia));
-        Location malaga = locationRepository.save(new Location("Cádiz",andalucia));
-        Location cordoba = locationRepository.save(new Location("Cádiz",andalucia));
+        Location cordoba = locationRepository.save(new Location("Córdoba",andalucia));
 
         Location manarola = locationRepository.save(new Location("manarola",boltano));
         Location portofino = locationRepository.save(new Location("portofino",boltano));
@@ -47,18 +46,19 @@ public class Seeder implements CommandLineRunner {
         Location putian = locationRepository.save(new Location("Putian",fujian));
 
 
-        Player espanolo = playerRepository.save(new Player("españolito1", 33, cadiz));
-        Player fachita = playerRepository.save(new Player("facha", 10, cordoba));
-        Player pode = playerRepository.save(new Player("podemitas", 22, cordoba));
-        Player vox = playerRepository.save(new Player("votante", 7, cadiz));
-        Player itali1 = playerRepository.save(new Player("maccarrani", 2,manarola));
-        Player itali2 = playerRepository.save(new Player("spagetti", 2, portofino));
+        Player espanolo = playerRepository.save(new Player("españolito1", 5, cadiz));
+        Player fachita = playerRepository.save(new Player("facha", 1, cordoba));
+        Player pode = playerRepository.save(new Player("podemitas", 1, cordoba));
+        Player vox = playerRepository.save(new Player("votante", 5, cadiz));
 
-        Player xin = playerRepository.save(new Player("corona", 13,fuzhou));
-        Player zao = playerRepository.save(new Player("virus", 2, putian));
+        Player itali1 = playerRepository.save(new Player("maccarrani", 5,manarola));
+        Player itali2 = playerRepository.save(new Player("spagetti", 6, portofino));
+
+        Player xin = playerRepository.save(new Player("corona", 7,fuzhou));
+        Player zao = playerRepository.save(new Player("virus", 8, putian));
 
         Team chiano = teamRepository.save(new Team("Chinos e Italianos").addPlayers(Arrays.asList(itali1,itali2,xin,zao)));
-        Team decadi = teamRepository.save(new Team("Los de cádiz").addPlayers(Arrays.asList(vox,espanolo)));
+        Team decadi = teamRepository.save(new Team("Los de cádiz").addPlayers(Arrays.asList(vox, espanolo)));
         Team itali = teamRepository.save(new Team("Italianos").addPlayers(Arrays.asList(itali1,itali2)));
         Team xino = teamRepository.save(new Team("Chinos").addPlayers(Arrays.asList(xin,zao)));
         Team dorcoba = teamRepository.save(new Team("cordobeze").addPlayers(Arrays.asList(fachita,pode)));
