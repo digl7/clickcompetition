@@ -8,7 +8,7 @@ import java.util.Collection;
 
 public interface TeamRepository extends CrudRepository<Team, Long> {
     @Query("Select new es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Team(t, sum(p.clicks)) " +
-            "from Team t join fetch t.players p " +
+            "from Team t join t.players p " +
             "group by t.name " +
             "order by sum(p.clicks)")
         Collection<Team> showTeams();
