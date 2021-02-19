@@ -7,6 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Collection;
 
 public interface TeamRepository extends CrudRepository<Team, Long> {
-    //@Query("Select tl from Player.teams tl, Team t, Player p Where p.name = t.name")
-        //Collection<Object> showTeams();
+    @Query("Select new es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Team(t, sum(p.clicks)) " +
+            "from Team t join fetch t.players p " +
+            "group by t.name " +
+            "order by sum(p.clicks)")
+        Collection<Team> showTeams();
 }

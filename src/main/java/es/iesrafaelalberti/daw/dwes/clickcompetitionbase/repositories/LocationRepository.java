@@ -11,5 +11,5 @@ public interface LocationRepository extends CrudRepository<Location, Long> {
             "where l.name=p.location.name " +
             "group by l.name " +
             "order by sum(p.clicks) desc")
-      Collection<Object> bestLocation();
+      Collection<Location> bestLocation();
 }

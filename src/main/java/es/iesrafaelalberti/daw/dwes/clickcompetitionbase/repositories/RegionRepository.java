@@ -11,5 +11,5 @@ public interface RegionRepository extends CrudRepository<Region, Long> {
             "from Region r, Location l, Player p " +
             "where l.name = p.location.name and r.name = l.region.name " +
             "group by r.name order by sum(p.clicks) desc ")
-        Collection<Object> regionBests();
+        Collection<Region> regionBests();
 }

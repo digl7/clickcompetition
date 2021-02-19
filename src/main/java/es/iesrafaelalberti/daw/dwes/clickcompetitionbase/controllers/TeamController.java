@@ -35,4 +35,10 @@ public class TeamController {
                 HttpStatus.OK);
     }
 
+    @GetMapping(value = "/team/show")
+    public ResponseEntity<Object> teamDetail() {
+        return new ResponseEntity<>(teamRepository.showTeams(), HttpStatus.OK);
+
+    }
+
 }

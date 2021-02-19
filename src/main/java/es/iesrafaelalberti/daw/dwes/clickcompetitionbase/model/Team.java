@@ -35,6 +35,13 @@ public class Team {
         this.players = new ArrayList<>();
     }
 
+    public Team(Team oldTeam, Long clicks){
+        this.name= oldTeam.getName();
+        this.id = oldTeam.getId();
+        this.players = oldTeam.getPlayers();
+        this.clicks = clicks.intValue();
+    }
+
     public Team addPlayers(List<Player> players){
         this.getPlayers().addAll(players);
         return this;
