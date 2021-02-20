@@ -10,4 +10,7 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
     @Query("Select p from Player p Where p.clicks >= ?1")
     Collection<Player> findPlayerByClicks(Integer clicks);
 
+    @Query("Select p from Player p order by p.clicks desc")
+    Collection<Player> bestPlayer();
+
 }

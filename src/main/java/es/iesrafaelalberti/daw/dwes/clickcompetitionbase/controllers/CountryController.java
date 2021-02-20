@@ -22,6 +22,8 @@ public class CountryController {
 
     @GetMapping(value = "/country/{id}")
     public ResponseEntity<Object> countryDetail(@PathVariable("id")Long id) {
+
+        //TODO: poner clicks en /{id} en todos lados.
         return new ResponseEntity<>(countryRepository.findById(id).orElseThrow(EntityNotFoundException::new),
                 HttpStatus.OK);
     }

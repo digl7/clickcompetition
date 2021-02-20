@@ -20,14 +20,21 @@ public class PlayerController {
         return new ResponseEntity<>(playerRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/player/{id}")
+    @GetMapping(value = "/players/{id}")
     public ResponseEntity<Object> playerDetail(@PathVariable("id") Long id) {
+
+        //TODO: poner clicks en /{id} en todos lados.
         return new ResponseEntity<>(playerRepository.findById(id).orElseThrow(EntityNotFoundException::new),
                                     HttpStatus.OK);
     }
 
-    @GetMapping(value = "/player/morethan/{clicks}")
+    @GetMapping(value = "/players/morethan/{clicks}")
     public ResponseEntity<Object> bestPlayers(@PathVariable("clicks") Integer clicks) {
         return new ResponseEntity<>(playerRepository.findPlayerByClicks(clicks), HttpStatus.OK);
+    }
+
+    @GetMapping(value ="/players/bests")
+    public ResponseEntity<Object> playerBests() {
+        return new ResponseEntity<>(playerRepository.bestPlayer(),HttpStatus.OK);
     }
 }

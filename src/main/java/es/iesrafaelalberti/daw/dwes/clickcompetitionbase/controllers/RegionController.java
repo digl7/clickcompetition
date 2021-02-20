@@ -22,6 +22,8 @@ public class RegionController {
 
     @GetMapping(value = "/region/{id}")
     public ResponseEntity<Object> regionDetail(@PathVariable("id")Long id) {
+
+        //TODO: poner clicks en /{id} en todos lados.
         return new ResponseEntity<>(regionRepository.findById(id).orElseThrow(EntityNotFoundException::new),
                 HttpStatus.OK);
     }

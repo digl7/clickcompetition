@@ -22,6 +22,8 @@ public class LocationController {
 
     @GetMapping(value = "/location/{id}")
     public ResponseEntity<Object> locationDetail(@PathVariable("id")Long id) {
+
+        //TODO: poner clicks en /{id} en todos lados.
         return new ResponseEntity<>(locationRepository.findById(id).orElseThrow(EntityNotFoundException::new),
                 HttpStatus.OK);
     }

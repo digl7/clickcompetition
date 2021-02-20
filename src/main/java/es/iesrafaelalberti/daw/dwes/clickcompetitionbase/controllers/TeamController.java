@@ -30,15 +30,18 @@ public class TeamController {
 
     @GetMapping(value = "/team/{id}")
     public ResponseEntity<Object> teamDetail(@PathVariable("id")Long id) {
+        //TODO: poner clicks en /{id} en todos lados.
         Optional<Team> team = teamRepository.findById(id);
         return new ResponseEntity<>(teamRepository.findById(id).orElseThrow(EntityNotFoundException::new),
                 HttpStatus.OK);
     }
 
-    @GetMapping(value = "/team/show")
+    @GetMapping(value = "/team/bests")
     public ResponseEntity<Object> teamDetail() {
-        return new ResponseEntity<>(teamRepository.showTeams(), HttpStatus.OK);
+        return new ResponseEntity<>(teamRepository.teamBests(), HttpStatus.OK);
 
     }
+
+
 
 }
