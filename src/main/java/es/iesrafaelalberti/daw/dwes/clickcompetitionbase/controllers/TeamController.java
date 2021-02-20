@@ -2,20 +2,24 @@ package es.iesrafaelalberti.daw.dwes.clickcompetitionbase.controllers;
 
 import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Team;
 import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.repositories.TeamRepository;
+import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.services.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityNotFoundException;
+import java.io.IOException;
 import java.util.Optional;
 
 @RestController
 public class TeamController {
     @Autowired
     private TeamRepository teamRepository;
+
+    @Autowired
+    private ImageService imageService;
 
     @GetMapping(value = "/team")
 
@@ -42,6 +46,11 @@ public class TeamController {
 
     }
 
+    @PutMapping(value  = "/teams/images/{id}")
+    public ResponseEntity<Object> teamImageUpdate(@PathVariable("id") Long id, @RequestParam("file") MultipartFile file) throws EntityNotFoundException, IOException {
+        imageService.imageTeamStore(file,id);
+        return new ResponseEntity<>("Team image " + id + " actualizada", HttpStatus.OK);
+    }
 
 
 }

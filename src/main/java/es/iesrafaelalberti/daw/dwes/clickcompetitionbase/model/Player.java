@@ -14,6 +14,7 @@ public class Player {
     private Long id;
     private String name;
     private int clicks;
+    private String imageUrl;
 
     @JsonBackReference
     @ManyToMany(mappedBy = "players")

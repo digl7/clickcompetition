@@ -1,10 +1,12 @@
 package es.iesrafaelalberti.daw.dwes.clickcompetitionbase.repositories;
 
+import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Player;
 import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Team;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 public interface TeamRepository extends CrudRepository<Team, Long> {
     @Query("Select new es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Team(t, sum(p.clicks)) " +
@@ -12,4 +14,6 @@ public interface TeamRepository extends CrudRepository<Team, Long> {
             "group by t.name " +
             "order by sum(p.clicks) desc")
         Collection<Team> teamBests();
+
+    Optional<Team> findTeamById(Long id);
 }

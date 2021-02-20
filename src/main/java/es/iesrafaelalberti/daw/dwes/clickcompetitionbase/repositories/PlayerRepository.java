@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 public interface PlayerRepository extends CrudRepository<Player, Long> {
     @Query("Select p from Player p Where p.clicks >= ?1")
@@ -12,5 +13,7 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
 
     @Query("Select p from Player p order by p.clicks desc")
     Collection<Player> bestPlayer();
+
+    public Optional<Player> findPlayerById(Long id);
 
 }

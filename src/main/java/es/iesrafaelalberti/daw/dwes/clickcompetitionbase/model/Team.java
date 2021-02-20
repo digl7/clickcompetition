@@ -16,6 +16,7 @@ public class Team {
     private Long id;
     private String name;
     private int clicks;
+    private String imageUrl;
 
 
     @ManyToMany

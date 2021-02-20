@@ -1,19 +1,23 @@
 package es.iesrafaelalberti.daw.dwes.clickcompetitionbase.controllers;
 
 import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.repositories.PlayerRepository;
+import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.services.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityNotFoundException;
+import java.io.IOException;
 
 @RestController
 public class PlayerController {
     @Autowired
     private PlayerRepository playerRepository;
+
+    @Autowired
+    private ImageService imageService;
 
     @GetMapping(value = "/players")
     public ResponseEntity<Object> playerList(){
@@ -36,5 +40,11 @@ public class PlayerController {
     @GetMapping(value ="/players/bests")
     public ResponseEntity<Object> playerBests() {
         return new ResponseEntity<>(playerRepository.bestPlayer(),HttpStatus.OK);
+    }
+
+    @PutMapping(value  = "/players/images/{id}")
+    public ResponseEntity<Object> playerImageUpdate(@PathVariable("id") Long id, @RequestParam("file") MultipartFile file) throws EntityNotFoundException, IOException {
+        imageService.imagePlayerStore(file,id);
+        return new ResponseEntity<>("Player image " + id + " actualizada", HttpStatus.OK);
     }
 }
