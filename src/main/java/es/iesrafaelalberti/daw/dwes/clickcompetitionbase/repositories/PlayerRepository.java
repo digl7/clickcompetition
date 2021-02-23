@@ -14,6 +14,6 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
     @Query("Select p from Player p order by p.clicks desc")
     Collection<Player> bestPlayer();
 
-    public Optional<Player> findPlayerById(Long id);
+    Optional<Player> findPlayerById(Long id);
 
 }
