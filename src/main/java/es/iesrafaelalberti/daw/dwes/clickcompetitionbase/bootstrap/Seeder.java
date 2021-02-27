@@ -23,6 +23,10 @@ public class Seeder implements CommandLineRunner {
     private CountryRepository countryRepository;
     @Autowired
     private TeamRepository teamRepository;
+    @Autowired
+    private RoleRepository roleRepository;
+    @Autowired
+    private UserRepository userRepository;
 
 
     @Override
@@ -63,7 +67,15 @@ public class Seeder implements CommandLineRunner {
         Team xino = teamRepository.save(new Team("Chinos").addPlayers(Arrays.asList(xin,zao)));
         Team dorcoba = teamRepository.save(new Team("cordobeze").addPlayers(Arrays.asList(fachita,pode)));
 
+        //roles
+        Role r1 = roleRepository.save(new Role("ROLE_ADMIN"));
+        Role r2 = roleRepository.save(new Role("ROLE_PLAYER"));
+        Role r3 = roleRepository.save(new Role("ROLE_GOD"));
 
+        //usuarios
+        User u1 = userRepository.save(new User("españolito1", "españolito1", r1));
+        User u2 = userRepository.save(new User("spagetti", "spagetti", r2));
+        User u3 = userRepository.save(new User("virus", "virus", r3));
 
     }
 }

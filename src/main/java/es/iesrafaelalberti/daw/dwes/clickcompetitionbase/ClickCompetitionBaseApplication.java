@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.daw.dwes.clickcompetitionbase;
 
+import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.security.JWTAuthorizationFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -24,14 +25,19 @@ public class ClickCompetitionBaseApplication {
     class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.csrf().disable()
+            http.cors().and().csrf().disable()
+                    // assign filter for authentication
+                    .addFilterAfter(new JWTAuthorizationFilter(getApplicationContext()), UsernamePasswordAuthenticationFilter.class)
+                    // define authorization patterns
                     .authorizeRequests()
-                    .antMatchers("/*").hasAnyRole("player")
-                    .antMatchers("/demo1.html").hasRole("player")
-                    .and().formLogin().defaultSuccessUrl("/index.html");
+                    .antMatchers("/login/**").permitAll()
+                    .antMatchers("/logout").authenticated()
+                    .antMatchers("/players").authenticated()
+                    .antMatchers("/country/*").hasAnyRole("ADMIN", "GOD")
+                    .antMatchers("/").authenticated();
         }
 
-        @Override
+       /* @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.inMemoryAuthentication()
                     .withUser("españolito1").password("españolito1").roles("player")
@@ -48,13 +54,14 @@ public class ClickCompetitionBaseApplication {
                     .and()
                     .withUser("corona").password("corona").roles("player")
                     .and()
-                    .withUser("virus").password("virus").roles("nada");
+                    .withUser("virus").password("virus").roles("nada");*/
         }
 
         @Bean
         public PasswordEncoder getPasswordEncoder() {
-            return NoOpPasswordEncoder.getInstance();
+            return new BCryptPasswordEncoder();
         }
 
+
     }
-}
+
