@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 
 public interface RoleRepository extends CrudRepository<Role, Long> {
-    @Query("Select r from Role r JOIN FETCH r.users where r.id = :id")
-    Role findUsers(@Param("id") Long id);
+    @Query("Select r from Role r JOIN FETCH r.player where r.id = :id")
+    Role findPlayers(@Param("id") Long id);
 }

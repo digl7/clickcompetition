@@ -25,8 +25,6 @@ public class Seeder implements CommandLineRunner {
     private TeamRepository teamRepository;
     @Autowired
     private RoleRepository roleRepository;
-    @Autowired
-    private UserRepository userRepository;
 
 
     @Override
@@ -50,32 +48,28 @@ public class Seeder implements CommandLineRunner {
         Location putian = locationRepository.save(new Location("Putian",fujian));
 
 
-        Player espanolo = playerRepository.save(new Player("españolito1", 5, cadiz));
-        Player fachita = playerRepository.save(new Player("facha", 1, cordoba));
-        Player pode = playerRepository.save(new Player("podemitas", 1, cordoba));
-        Player vox = playerRepository.save(new Player("votante", 5, cadiz));
+        //roles
+        Role r1 = roleRepository.save(new Role("ROLE_ADMIN"));
+        Role r2 = roleRepository.save(new Role("ROLE_PLAYER"));
+        Role r3 = roleRepository.save(new Role("ROLE_GOD"));
 
-        Player itali1 = playerRepository.save(new Player("maccarrani", 5,manarola));
-        Player itali2 = playerRepository.save(new Player("spagetti", 6, portofino));
 
-        Player xin = playerRepository.save(new Player("corona", 7,fuzhou));
-        Player zao = playerRepository.save(new Player("virus", 8, putian));
+        Player espanolo = playerRepository.save(new Player("españolito1", 5, cadiz, "espana", "espana", r1));
+        Player fachita = playerRepository.save(new Player("facha", 1, cordoba, "facha", "facha", r2));
+        Player pode = playerRepository.save(new Player("podemitas", 1, cordoba, "pode", "pode", r1));
+        Player vox = playerRepository.save(new Player("votante", 5, cadiz, "vox","vox",r3));
+
+        Player itali1 = playerRepository.save(new Player("maccarrani", 5,manarola,"macca","macca",r1));
+        Player itali2 = playerRepository.save(new Player("spagetti", 6, portofino,"spage","spage",r1));
+
+        Player xin = playerRepository.save(new Player("corona", 7,fuzhou,"corona","corona",r2));
+        Player zao = playerRepository.save(new Player("virus", 8, putian,"virus","virus",r1));
 
         Team chiano = teamRepository.save(new Team("Chinos e Italianos").addPlayers(Arrays.asList(itali1,itali2,xin,zao)));
         Team decadi = teamRepository.save(new Team("Los de cádiz").addPlayers(Arrays.asList(vox, espanolo)));
         Team itali = teamRepository.save(new Team("Italianos").addPlayers(Arrays.asList(itali1,itali2)));
         Team xino = teamRepository.save(new Team("Chinos").addPlayers(Arrays.asList(xin,zao)));
         Team dorcoba = teamRepository.save(new Team("cordobeze").addPlayers(Arrays.asList(fachita,pode)));
-
-        //roles
-        Role r1 = roleRepository.save(new Role("ROLE_ADMIN"));
-        Role r2 = roleRepository.save(new Role("ROLE_PLAYER"));
-        Role r3 = roleRepository.save(new Role("ROLE_GOD"));
-
-        //usuarios
-        User u1 = userRepository.save(new User("españolito1", "españolito1", r1));
-        User u2 = userRepository.save(new User("spagetti", "spagetti", r2));
-        User u3 = userRepository.save(new User("virus", "virus", r3));
 
     }
 }

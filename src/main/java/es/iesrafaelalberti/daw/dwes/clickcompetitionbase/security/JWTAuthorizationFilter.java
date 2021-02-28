@@ -1,13 +1,14 @@
 package es.iesrafaelalberti.daw.dwes.clickcompetitionbase.security;
 
 
-import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.User;
-import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.repositories.UserRepository;
+import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model.Player;
+import es.iesrafaelalberti.daw.dwes.clickcompetitionbase.repositories.PlayerRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.hibernate.Hibernate;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -20,13 +21,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 
 public class JWTAuthorizationFilter extends OncePerRequestFilter {
     // OJO: NO @Autowired
-    private UserRepository userRepository;
+    private PlayerRepository playerRepository;
 
     /*******************************************************************************************
      * Se modifica el constructor para recibir el contexto porque por medidas de seguridad
@@ -34,12 +36,12 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
      * y se obtiene el repositorio de usuarios del contexto en vez de @Autowired
      */
     public JWTAuthorizationFilter(ApplicationContext applicationContext) {
-        this.userRepository = applicationContext.getBean(UserRepository.class);
+        this.playerRepository = applicationContext.getBean(PlayerRepository.class);
     }
 
     /*******************************************************************************************
-            Filtro simple comprobando 'OK' en authorization,
-            SÓLO para demostrar mecanismo de autenticación
+     Filtro simple comprobando 'OK' en authorization,
+     SÓLO para demostrar mecanismo de autenticación
      */
     protected void simpleDemoFilter(HttpServletRequest request) {
         String encabezado = request.getHeader("Authorization");
@@ -50,8 +52,8 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
     }
 
     /*******************************************************************************************
-            Autenticación simple sin recuperar información del token,
-            SÓLO para demostrar mecanismo de autenticación
+     Autenticación simple sin recuperar información del token,
+     SÓLO para demostrar mecanismo de autenticación
      */
     private void simpleSpringAuthentication() {
         List<String> authoritiesText = new ArrayList<>(Arrays.asList("ROLE_ADMIN", "ROLE_GOD"));
@@ -87,12 +89,12 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
                 try {
                     Claims claims = Jwts.parser().setSigningKey("pestillo".getBytes()).parseClaimsJws(jwtToken).getBody();
                     String username = claims.getSubject();
-                    User user = userRepository.findUserByUsername(username)
+                    Player player = playerRepository.findPlayerByUsername(username)
                             .orElseThrow(EntityNotFoundException::new);
-                    if(!user.getToken().equals(jwtToken))
+                    if(!player.getToken().equals(jwtToken))
                         throw new Exception();
-                    Hibernate.initialize(user.getRoles());
-                    setUpSpringAuthentication(user);
+                    Hibernate.initialize(player.getRole());
+                    setUpSpringAuthentication(player);
                 } catch (Exception e) {
                     SecurityContextHolder.clearContext();
                 }
@@ -103,12 +105,12 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 
-    private void setUpSpringAuthentication(User user) {
+    private void setUpSpringAuthentication(Player player) {
 
-        Hibernate.initialize(user.getRoles());
+        Hibernate.initialize(player.getRole());
         UsernamePasswordAuthenticationToken auth =
-                new UsernamePasswordAuthenticationToken(user, null,
-                            user.getRoles());
+                new UsernamePasswordAuthenticationToken(player, null,
+                        (Collection<? extends GrantedAuthority>) player.getRole());
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 }

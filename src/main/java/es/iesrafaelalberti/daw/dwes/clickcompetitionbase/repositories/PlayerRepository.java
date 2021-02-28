@@ -16,4 +16,5 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
 
     Optional<Player> findPlayerById(Long id);
 
+    Optional<Player> findPlayerByUsername(String username);
 }

@@ -1,5 +1,6 @@
 package es.iesrafaelalberti.daw.dwes.clickcompetitionbase.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,9 +17,11 @@ public class Role implements GrantedAuthority {
     Long id;
     String name;
 
+    @JsonBackReference
     @EqualsAndHashCode.Exclude
-    @ManyToMany(mappedBy = "roles")
-    Set<User> users = new HashSet<>();
+    @OneToMany(mappedBy= "role", cascade = CascadeType.ALL)
+    Set<Player> player = new HashSet<>();
+
 
     public Role() {
     }
