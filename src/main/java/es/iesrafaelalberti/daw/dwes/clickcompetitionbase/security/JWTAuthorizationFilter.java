@@ -106,11 +106,12 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter {
     }
 
     private void setUpSpringAuthentication(Player player) {
-
+        List<GrantedAuthority> roles = new ArrayList<>();
+        roles.add(player.getRole());
         Hibernate.initialize(player.getRole());
         UsernamePasswordAuthenticationToken auth =
                 new UsernamePasswordAuthenticationToken(player, null,
-                        (Collection<? extends GrantedAuthority>) player.getRole());
+                        roles);
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 }
