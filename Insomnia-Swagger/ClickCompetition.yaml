@@ -1,0 +1,716 @@
+_type: export
+__export_format: 4
+__export_date: 2021-03-03T16:40:09.258Z
+__export_source: insomnia.desktop.app:v2020.5.2
+resources:
+  - _id: req_fb5f1e1d89b84fa2af4a24b7489f29ee
+    parentId: fld_c0851fdf06dc48fa87c9e388dbd8e4ec
+    modified: 1614789265028
+    created: 1614789231022
+    url: http://localhost:8080/download/players/16_zaun_crest_icon.png
+    name: /download/players/{name}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1614789231022
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_c0851fdf06dc48fa87c9e388dbd8e4ec
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614789222122
+    created: 1614789222122
+    name: Image
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614789222122
+    _type: request_group
+  - _id: fld_70183e785e7d4674b2a29588ad5d78be
+    parentId: wrk_d82f55873ef14a67953e23f19e5221c5
+    modified: 1614787764607
+    created: 1614787764607
+    name: ClickCompetitionDiego
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787764607
+    _type: request_group
+  - _id: wrk_d82f55873ef14a67953e23f19e5221c5
+    parentId: null
+    modified: 1611057822005
+    created: 1611057822005
+    name: Insomnia
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: req_76598a8856d7425483265cbf4d0fd221
+    parentId: fld_c0851fdf06dc48fa87c9e388dbd8e4ec
+    modified: 1614789322047
+    created: 1614789279566
+    url: http://localhost:8080/download/teams/21_shurima_crest_icon.png
+    name: /download/teams/{name}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1614789054397.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_870e11cc10b7456d9959b1d212056ccd
+    parentId: fld_90782835027c4407beaeaf003e2e5b1c
+    modified: 1614788987826
+    created: 1614788835778
+    url: http://localhost:8080/country
+    name: /country
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614788877773
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_90782835027c4407beaeaf003e2e5b1c
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614789197769
+    created: 1614787759024
+    name: Country
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787762015.5
+    _type: request_group
+  - _id: req_3c704d6494d74a0b8798036ea4d24c95
+    parentId: fld_90782835027c4407beaeaf003e2e5b1c
+    modified: 1614788988823
+    created: 1614788850255
+    url: http://localhost:8080/country/1
+    name: /country/{id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614788877748
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_99c3b263a22b4cc8ab76a161ade607cf
+    parentId: fld_90782835027c4407beaeaf003e2e5b1c
+    modified: 1614788989756
+    created: 1614788892863
+    url: http://localhost:8080/country/bests
+    name: /country/bests
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614788877735.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6314581edf0d40228e0c91c9049966e0
+    parentId: fld_f7fb7321d3014522960c5e7aedd73cf0
+    modified: 1614788645514
+    created: 1614788638691
+    url: http://localhost:8080/location
+    name: /location
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761903
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_f7fb7321d3014522960c5e7aedd73cf0
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614789208950
+    created: 1614011844020
+    name: Location
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787761990.5
+    _type: request_group
+  - _id: req_ca59944398e942129bc85ff5dccdd993
+    parentId: fld_f7fb7321d3014522960c5e7aedd73cf0
+    modified: 1614788655255
+    created: 1614788653287
+    url: http://localhost:8080/location/7
+    name: /location/{id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761887.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a8b34c7ff8f04b4bbe45d99fdfdb0e85
+    parentId: fld_f7fb7321d3014522960c5e7aedd73cf0
+    modified: 1614788667207
+    created: 1614788664366
+    url: http://localhost:8080/location/bests
+    name: /location/bests
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761879.5625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_55e9f42b5c794ca1b9bec6d6953be00c
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789020420
+    created: 1614444427740
+    url: http://localhost:8080/players
+    name: /players
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787907936
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614788615517
+    created: 1614011832036
+    name: Players
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787761965.5
+    _type: request_group
+  - _id: req_a0c1e15967ec4010aca4516f49023df5
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789097299
+    created: 1614787907886
+    url: http://localhost:8080/players/16
+    name: /players/{id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+    metaSortKey: -1614787907929.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7ee5ec503b7e40fcbe329dee51d3d250
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789093623
+    created: 1614788003675
+    url: http://localhost:8080/players/morethan/1
+    name: /players/morethan/{clicks}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787907923.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_381a1a9b662f414996ee897fa33d9c80
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789103647
+    created: 1614788377079
+    url: http://localhost:8080/players/bests
+    name: /players/bests
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787907917.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_0731ea8642a74fb8b14e11a40abfcc9e
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789107358
+    created: 1614788395814
+    url: http://localhost:8080/players/images/16
+    name: /players/images/{id}
+    description: ""
+    method: PUT
+    body:
+      mimeType: multipart/form-data
+      params:
+        - name: file
+          value: ""
+          description: ""
+          id: pair_4a5a4b4f42444b28b0c973628989b8c7
+          type: file
+          multiline: null
+          fileName: C:\Users\Diego\Desktop\Fondos\zaun_crest_icon.png
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_019fe1c9b3e042d0932a220f81dc7df3
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787907914.125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_fba831368c3c47caaa63f0852859061a
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789075729
+    created: 1614789068178
+    url: http://localhost:8080/rol/13
+    name: /rol/{id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787907911
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a3b417f4e2a44463a3a78a59e31432b2
+    parentId: fld_ce4f939cb4fe4fd791c27d9ad346f6fa
+    modified: 1614789085080
+    created: 1614788602037
+    url: http://localhost:8080/logout
+    name: /logout
+    description: ""
+    method: GET
+    body:
+      mimeType: multipart/form-data
+      params: []
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_3283a36883504853a100e3208544dbdc
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787907898.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_607f128ee76248a49f0fefbea1c772b1
+    parentId: fld_e674e8b2361741888c179b36d8d08d5f
+    modified: 1614788974538
+    created: 1614788926395
+    url: http://localhost:8080/region
+    name: /region
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614701928313.8125
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_e674e8b2361741888c179b36d8d08d5f
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614789213452
+    created: 1614011839173
+    name: Region
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787761953
+    _type: request_group
+  - _id: req_27e00d27b3ed4c1d8cf7640e7ab65003
+    parentId: fld_e674e8b2361741888c179b36d8d08d5f
+    modified: 1614788967776
+    created: 1614788967776
+    url: http://localhost:8080/region/4
+    name: /region/{id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614680469936.8281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_82c79b4223274b73a893f25ddb01f792
+    parentId: fld_e674e8b2361741888c179b36d8d08d5f
+    modified: 1614788962283
+    created: 1614788959623
+    url: http://localhost:8080/region/bests
+    name: /region/bests
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614659011559.8438
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_93c06207cd6843518059142ca3b28101
+    parentId: fld_171d898fb09c495db3fcf185dcf6e9f0
+    modified: 1614788804325
+    created: 1614788703143
+    url: http://localhost:8080/team
+    name: /team
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761895.1875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_171d898fb09c495db3fcf185dcf6e9f0
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614788696361
+    created: 1614011835300
+    name: Teams
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787761940.5
+    _type: request_group
+  - _id: req_3f23e88981a84d07bcab835e894a5f6f
+    parentId: fld_171d898fb09c495db3fcf185dcf6e9f0
+    modified: 1614788751562
+    created: 1614788707382
+    url: http://localhost:8080/team/24
+    name: /team/{id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761891.2812
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_02c5268aee8743e18671499a99c3c858
+    parentId: fld_171d898fb09c495db3fcf185dcf6e9f0
+    modified: 1614788761881
+    created: 1614788759031
+    url: http://localhost:8080/team/bests
+    name: /team/bests
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761889.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_06ecf048a798493dac66d9458236cee1
+    parentId: fld_171d898fb09c495db3fcf185dcf6e9f0
+    modified: 1614788815756
+    created: 1614788770617
+    url: http://localhost:8080/teams/images/24
+    name: /teams/images/{id}
+    description: ""
+    method: PUT
+    body:
+      mimeType: multipart/form-data
+      params:
+        - name: file
+          value: ""
+          description: ""
+          id: pair_fc60311cda614f03b9d747665be6baaf
+          type: file
+          multiline: null
+          fileName: C:\Users\Diego\Desktop\Fondos\shurima_crest_icon.png
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_7a99df96fbad4f419c587b3124a94e4e
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+      disabled: false
+    metaSortKey: -1614787761888.3516
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_23d9c04848344d97b8111c9cfe45508e
+    parentId: fld_6aeb515126c14cb29fe91867177a841d
+    modified: 1614787921828
+    created: 1614366158805
+    url: http://localhost:8080/login
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params:
+        - name: username
+          value: facha
+          description: ""
+          id: pair_e8f53475dd4045588d8076498b988cdf
+          disabled: false
+        - name: password
+          value: facha
+          description: ""
+          id: pair_df4bdfa9ae194928ab684b48c55b5e18
+          disabled: false
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/x-www-form-urlencoded
+        id: pair_a524afb2a1924742b00aee7c49264e20
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJBbGJlcnRJRVMiLCJzdWIiOiJmYWNoYSIsImF1dGhvcml0aWVzIjp7ImlkIjoxNCwibmFtZSI6IlJPTEVfUExBWUVSIiwiYXV0aG9yaXR5IjoiUk9MRV9QTEFZRVIifSwiaWF0IjoxNjE0Nzg3ODkyLCJleHAiOjE2MTQ3OTM4OTJ9.x2601V-5oRQO5WSM_02pfUgIVKi4dckHtA9ihKl8RgLrSfJz92teusSIAD2KbpasUOVF2a4ap1Bhbx0CpgEjBQ
+    metaSortKey: -1614366158805
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_6aeb515126c14cb29fe91867177a841d
+    parentId: fld_70183e785e7d4674b2a29588ad5d78be
+    modified: 1614789557687
+    created: 1614787809855
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1614787761890.5
+    _type: request_group
+  - _id: env_a3580ec05fd08b7f1b01d934ce699f24de2ea593
+    parentId: wrk_d82f55873ef14a67953e23f19e5221c5
+    modified: 1611057822054
+    created: 1611057822054
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1611057822054
+    _type: environment
+  - _id: jar_a3580ec05fd08b7f1b01d934ce699f24de2ea593
+    parentId: wrk_d82f55873ef14a67953e23f19e5221c5
+    modified: 1614789400818
+    created: 1611057822056
+    name: Default Jar
+    cookies:
+      - key: JSESSIONID
+        value: BE48CBF69F4DDA5DC29BA90C99967C88
+        domain: localhost
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2021-02-27T17:19:11.489Z
+        lastAccessed: 2021-03-03T16:36:40.818Z
+        id: "37925513489985163"
+    _type: cookie_jar
+  - _id: spc_18725907a7244d1a93957b9d51415bb8
+    parentId: wrk_d82f55873ef14a67953e23f19e5221c5
+    modified: 1611057822005
+    created: 1611057822005
+    fileName: Insomnia
+    contents: ""
+    contentType: yaml
+    _type: api_spec
