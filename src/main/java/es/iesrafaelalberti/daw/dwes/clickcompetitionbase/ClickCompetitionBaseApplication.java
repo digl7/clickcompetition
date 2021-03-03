@@ -31,10 +31,9 @@ public class ClickCompetitionBaseApplication {
                     // define authorization patterns
                     .authorizeRequests()
                     .antMatchers("/login/**").permitAll()
-                    .antMatchers("/logout/**").permitAll()
-                    .antMatchers("/players/**").authenticated() //.authenticated()
-                    .antMatchers("/country/**").permitAll() //.hasAnyRole("ADMIN", "GOD")
-                    .antMatchers("/").permitAll(); //.authenticated();
+                    .antMatchers("/logout/**").authenticated()
+                    .antMatchers("/country/**").hasAnyRole("ADMIN", "GOD")
+                    .antMatchers("/").authenticated();
         }
 
        /* @Override
